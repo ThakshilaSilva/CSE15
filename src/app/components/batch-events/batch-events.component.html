@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>Add Batch Events</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form id='userForm'>
+                        <div class="input_field">
+                            <span>
+                              <i aria-hidden="true" class="fa fa-lock"></i>
+                            </span>
+                            <input type="text" name="eventName" id="eventName" placeholder="Event name" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="date" name="date" id="date" placeholder="Event Date" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-user"></i>
+						                </span>
+                            <input type="text" name="description" id="description" placeholder="Event description" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="url" name="album" id='album' placeholder="Photo album" required />
+                        </div>
+
+                        <button type="submit" class="signupbtn" (click)="addEvent()">Add the Event</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
