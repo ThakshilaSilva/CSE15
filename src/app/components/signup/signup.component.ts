@@ -23,17 +23,50 @@ export class SignupComponent implements OnInit {
 
   addUser(){
     const username = document.forms['userForm']['username'].value;
+    const fname = document.forms['userForm']['fname'].value;
+    const lname= document.forms['userForm']['lname'].value;
+    const nic= document.forms['userForm']['nic'].value;
+    const gender= document.forms['userForm']['gender'].value;
+    const dob = document.forms['userForm']['dob'].value;
+    const stream = document.forms['userForm']['stream'].value;
+    const email= document.forms['userForm']['email'].value;
+    const address= document.forms['userForm']['address'].value;
+    const tp= document.forms['userForm']['tp'].value;
     const password = document.forms['userForm']['password'].value;
-    this.user.addUser({
-      username: username,
-      password: password
-    }).subscribe(result => {
-      console.log(result);
-      alert('Successfully signedup!');
-    }, error => {
-      console.log(error);
+    const passwordC = document.forms['userForm']['passwordC'].value;
+    const linkedIn= document.forms['userForm']['linkedIn'].value;
+    const fb= document.forms['userForm']['fb'].value;
+
+   
+
+    if(password === passwordC){
+      console.log("pw matching");
+      this.user.addUser({
+        username: username,
+        fname: fname,
+        lname: lname,
+        nic: nic,
+        gender: gender,
+        dob: dob,
+        stream: stream,
+        email: email,
+        address: address,
+        tp: tp,
+        password: password,
+        linkedIn: linkedIn,
+        fb: fb
+      }).subscribe(result => {
+        console.log("Result"+result);
+        alert('Successfully signedup!');
+      }, error => {
+        console.log(error);
+      }
+      );
+    }else{
+      alert('Password Doesnot matching!')
     }
-  );
+
+    
   }
 
 }

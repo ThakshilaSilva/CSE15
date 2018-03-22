@@ -1,11 +1,157 @@
-<form name= "userForm" method="post">
+<!DOCTYPE html>
+<html lang="en">
 
-  <label for="name">Username :</label>
-  <input type="text" id="username" placeholder="Enter the username">
-  
-  <label for="password">Password :</label>
-  <input type="password" id="password" placeholder="Enter the password">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
 
-  <button type="submit" class="signupbtn" (click)="addUser()">Sign Up</button>
-      
-</form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>Signup</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form id='userForm'>
+                        <div class="input_field">
+                            <span>
+                              <i aria-hidden="true" class="fa fa-lock"></i>
+                            </span>
+                            <input type="text" name="username" id="username" placeholder="Index Number" required />
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+									    <i aria-hidden="true" class="fa fa-user"></i>
+								    </span>
+                                    <input type="text" name="fname" id="fname" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+									                    <i aria-hidden="true" class="fa fa-user"></i>
+								                    </span>
+                                    <input type="text" name="lname" id="lname" placeholder="Last Name" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                  <i aria-hidden="true" class="fa fa-user"></i>
+                                </span>
+                                    <input type="text" name="nic" id="nic" placeholder="NIC" required />
+                                </div>
+                            </div>
+
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                  <i aria-hidden="true" class="fa fa-user"></i>
+                                </span>
+                                    <select id="gender" name="gender" id="gender" required>
+                                      <option value="select" selected="" disabled="">Gender</option>
+                                      <option value="Male">Male</option>
+                                      <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                  <i aria-hidden="true" class="fa fa-user"></i>
+                                </span>
+                                    <input type="date" name="dob" id="dob" placeholder="Date of birth" required />
+                                </div>
+                            </div>
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                  <i aria-hidden="true" class="fa fa-user"></i>
+                                </span>
+                                    <select id="stream" name="stream" id="stream" required>
+                                      <option value="select" selected="" disabled="">Select Stream</option>
+                                      <option value="CSE">CSE</option>
+                                      <option value="ICE">ICE</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="email" name="email" id="email" placeholder="Email (cse)" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-user"></i>
+						                </span>
+                            <input type="text" name="address" id="address" placeholder="Address" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="text" name="tp" id='tp' placeholder="Contact Number" required />
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+                              <i aria-hidden="true" class="fa fa-user"></i>
+                            </span>
+                            <input type="text" name="linkedIn" id="linkedIn" placeholder="https://lk.linkedin.com/in/profile_id" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+                              <i aria-hidden="true" class="fa fa-user"></i>
+                            </span>
+                            <input type="text" name="facebook" id="fb" placeholder="http://www.facebook.com/profile_id" required />
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                      <i aria-hidden="true" class="fa fa-lock"></i>
+                                    </span>
+                                    <input type="password" name="password" id="password" placeholder="Password" required />
+                                </div>
+                            </div>
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                      <i aria-hidden="true" class="fa fa-lock"></i>
+                                    </span>
+                                    <input type="password" name="passwordC" id="passwordC" placeholder="Re-type Password" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="signupbtn" (click)="addUser()">Sign Up</button>
+
+                        <div class="text-center p-t-90">
+                            <label>Already have an account?</label>
+                            <a class="txt1" href="/login">SignIn</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

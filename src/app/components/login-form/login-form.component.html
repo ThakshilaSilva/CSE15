@@ -1,13 +1,44 @@
-<form class="m" name = "loginForm">
-  <div class="input">
-    <label>Username</label>
-    <input type="text" name="uname" id="uname" required>
-  </div>
-  <div class="input">
-    <label>Password</label>
-    <input type="password" name="psw" id="psw" required>
-  </div>
-  <div class="input">
-    <button type="submit" (click)="login()">LOGIN</button>
-  </div>
-</form>
+<head></head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" name="loginForm">
+                    <span class="login100-form-title p-b-34 p-t-27">LOGIN</span>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="uname" id="uname" placeholder="Enter Username" required>
+                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" name=psw id="psw" placeholder="Password" required>
+                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    </div>
+
+                    <div class="contact100-form-checkbox">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                        <label class="label-checkbox100" for="ckb1">
+							Remember me
+						</label>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" type="submit" (click)="login()">LOGIN</button>
+                    </div>
+
+                    <div class="text-center p-t-90">
+                        <a class="txt1" href="#">
+                Forgot Password?
+              </a>
+                        <label></label>
+                        <a class="txt1" href="#">Create Account</a>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

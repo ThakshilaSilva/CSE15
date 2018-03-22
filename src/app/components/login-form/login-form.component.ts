@@ -5,7 +5,7 @@ import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css','./css/main.css','./css/util.css']
 })
 export class LoginFormComponent implements OnInit {
 
@@ -18,11 +18,14 @@ export class LoginFormComponent implements OnInit {
       
       var username = document.forms['loginForm']['uname'].value;
       var password = document.forms['loginForm']['psw'].value;
+      console.log(password);
       
       this.user.queryUser({
         username: username
       }).subscribe(
         result => {
+          console.log(username);
+          console.log(result);
           if(result[0].password === password){
             alert('You are logged in!');
             this.router.navigate(['dashboard']);
