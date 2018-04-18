@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>Add Your Acheievements</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form id='userForm'>
+                        <div class="input_field">
+                            <span>
+                              <i aria-hidden="true" class="fa fa-lock"></i>
+                            </span>
+                            <input type="text" name="achievementName" id="achievementName" placeholder="Achievement" required />
+                        </div>
+                        <div class="input_field">
+                            <select id="field" name="field" required>
+                            <option value="select" selected="" disabled="">Select the field</option>
+                            <option value="academic">Academic</option>
+                            <option value="sport">Sport</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                        <div class="input_field">
+                            <select id="type" name="type" required>
+                          <option value="select" selected="" disabled="">Type of the achievement</option>
+                          <option value="Individual">Individual</option>
+                          <option value="Group">Group</option>
+                        </select>
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-user"></i>
+						                </span>
+                            <input type="text" name="description" id="description" placeholder="Details of the Achievement" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="date" name="date" id='date' placeholder="Acheieved date" required />
+                        </div>
+
+                        <button type="submit" class="signupbtn" (click)="addAcheivement()">Add the Achievement</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -37,8 +37,6 @@ export class SignupComponent implements OnInit {
     const linkedIn= document.forms['userForm']['linkedIn'].value;
     const fb= document.forms['userForm']['fb'].value;
 
-   
-
     if(password === passwordC){
       console.log("pw matching");
       this.user.addUser({

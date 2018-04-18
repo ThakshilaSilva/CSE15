@@ -10,6 +10,7 @@ export class UserService {
   private username;
   private http: Http;
 
+
   constructor(private router: Router, @Inject(Http) http) {
     this.isUserLogged = false;
     this.http = http;
@@ -23,6 +24,14 @@ export class UserService {
     return this.isUserLogged;
   }
 
+  setUsername(username: string){
+    this.username = username;
+  }
+
+  getUsername(){
+    return this.username;
+  }
+
   queryUser(data) {         // get user details
     return this.http.post('http://localhost:3000/get_user', JSON.stringify(data),
       new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
@@ -31,6 +40,13 @@ export class UserService {
 
   addUser(data){
     return this.http.post("http://localhost:3000/add_new_user", JSON.stringify(data),
+    new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+    .map(res => res.json()); 
+
+  }
+
+  updateUser(data){
+    return this.http.post("http://localhost:3000/updateUser", JSON.stringify(data),
     new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
     .map(res => res.json()); 
 

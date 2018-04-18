@@ -13,6 +13,8 @@ import { PublicComponent } from './components/public/public.component';
 import { BatchEventsComponent } from './components/batch-events/batch-events.component';
 import { Component } from '@angular/core/src/metadata/directives';
 import { BatchServiceService } from './services/batch-service.service';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AcheivementsComponent } from './components/acheivements/acheivements.component';
 
 const appRoutes:Routes = [
   {
@@ -34,6 +36,14 @@ const appRoutes:Routes = [
   {
     path: 'addBatchEvents',
     component: BatchEventsComponent
+  },
+  {
+    path: 'editProfile',
+    component: ProfileComponent
+  },
+  {
+    path: 'addAchievement',
+    component: AcheivementsComponent
   }
   
 ]
@@ -45,7 +55,9 @@ const appRoutes:Routes = [
     DashboardComponent,
     SignupComponent,
     PublicComponent,
-    BatchEventsComponent
+    BatchEventsComponent,
+    ProfileComponent,
+    AcheivementsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

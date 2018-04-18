@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
 app.post("/get_user", (req, res) => {
     UserControllers.getUser(req.body).then((result) => {
         res.status(200).send(result);
+        //console.log("successful");
     }).catch((err) => {
         res.status(400).send(err);
     });
@@ -32,7 +33,7 @@ app.post("/get_user", (req, res) => {
 
 app.post("/add_new_user", (req, res) => {
     UserControllers.addNewUser(req.body).then((result) => {
-        res.status(200).send(result);
+        res.status(200).send(result[0]);
     }).catch((err) => {
         res.status(400).send(err);
     });
@@ -41,6 +42,14 @@ app.post("/add_new_user", (req, res) => {
 app.post("/add_event", (req, res) => {
     BatchController.addEvent(req.body).then((result) => {
         res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.post("/updateUser", (req, res) => {
+    UserControllers.updateUser(req.body).then((result) => {
+        res.status(200).send(result[0]);
     }).catch((err) => {
         res.status(400).send(err);
     });

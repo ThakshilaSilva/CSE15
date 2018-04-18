@@ -10,6 +10,8 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var id= sessionStorage.getItem('id');
+    console.log("id :"+id);
   }
 
 }

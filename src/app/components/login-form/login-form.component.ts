@@ -18,17 +18,22 @@ export class LoginFormComponent implements OnInit {
       
       var username = document.forms['loginForm']['uname'].value;
       var password = document.forms['loginForm']['psw'].value;
-      console.log(password);
+      //console.log(password);
       
       this.user.queryUser({
         username: username
       }).subscribe(
         result => {
-          console.log(username);
-          console.log(result);
-          if(result[0].password === password){
+          //console.log(username);
+          //console.log(result[0]);
+          //console.log("pwd "+result[0].Password);
+          if(result[0].Password === password){
+            this.user.setUsername(username);
+            var u = this.user.getUsername();
             alert('You are logged in!');
-            this.router.navigate(['dashboard']);
+            sessionStorage.setItem('id',username);
+            this.router.navigate(['']);
+            
           }else{
             alert('Invalid user!');
           }

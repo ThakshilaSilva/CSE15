@@ -2,12 +2,13 @@ const { connection } = require('../dbConnection');
 
 const getUser = (user) => {
     return new Promise((resolve, reject) => {
-        connection.query("SELECT password FROM user where username=?", [user.username],
+        connection.query("SELECT * FROM user where username=?", [user.username],
             (err, res) => {
                 if (err) {
                     reject(err);
                 }
                 resolve(res);
+                //console.log(password);
             })
     });
 };
@@ -40,7 +41,32 @@ const addNewUser = (user) => {
 
 }
 
+const updateUser = (user) => {
+    //console.log(user.linkedIn);
+    return new Promise((resolve, reject) => {
+        connection.query("UPDATE user SET FirstName=?, LastName=?, ContactNo=?, Address=?, Facebook=?, LinkedIn=? WHERE Username=?", [
+            user.firstname,
+            user.lastname,
+            user.tp,
+            user.address,
+            user.fb,
+            user.linkedIn,
+            user.username
+        ], (err, result) => {
+            if (err) {
+                reject(err);
+                console.log("ERROR " + err);
+            }
+            resolve(result);
+            //console.log("res " + result);
+        });
+    }).catch((error) => {
+        reject(error);
+    });
+}
+
 module.exports = {
     getUser,
-    addNewUser
+    addNewUser,
+    updateUser
 };
