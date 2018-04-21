@@ -16,6 +16,8 @@ import { BatchServiceService } from './services/batch-service.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AcheivementsComponent } from './components/acheivements/acheivements.component';
 import { IndexComponent } from './components/index/index.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
+import { PeopleComponent } from './components/people/people.component';
 
 const appRoutes:Routes = [
   {
@@ -49,6 +51,14 @@ const appRoutes:Routes = [
   {
     path: 'index',
     component: IndexComponent
+  },
+  {
+    path: 'timeline',
+    component: TimelineComponent
+  },
+  {
+    path: 'people',
+    component: PeopleComponent
   }
   
 ]
@@ -63,7 +73,9 @@ const appRoutes:Routes = [
     BatchEventsComponent,
     ProfileComponent,
     AcheivementsComponent,
-    IndexComponent
+    IndexComponent,
+    TimelineComponent,
+    PeopleComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
