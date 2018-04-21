@@ -15,6 +15,7 @@ import { Component } from '@angular/core/src/metadata/directives';
 import { BatchServiceService } from './services/batch-service.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AcheivementsComponent } from './components/acheivements/acheivements.component';
+import { IndexComponent } from './components/index/index.component';
 
 const appRoutes:Routes = [
   {
@@ -44,6 +45,10 @@ const appRoutes:Routes = [
   {
     path: 'addAchievement',
     component: AcheivementsComponent
+  },
+  {
+    path: 'index',
+    component: IndexComponent
   }
   
 ]
@@ -57,7 +62,8 @@ const appRoutes:Routes = [
     PublicComponent,
     BatchEventsComponent,
     ProfileComponent,
-    AcheivementsComponent
+    AcheivementsComponent,
+    IndexComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

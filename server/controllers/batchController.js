@@ -18,6 +18,21 @@ const addEvent = (event) => {
     });
 
 }
+
+const getEvents = () => {
+    return new Promise((resolve, reject) => {
+        connection.query("SELECT * FROM batchevent",
+            (err, res) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(res);
+            });
+    }).catch((error) => {
+        reject(error);
+    });
+}
+
 module.exports = {
     addEvent
 };

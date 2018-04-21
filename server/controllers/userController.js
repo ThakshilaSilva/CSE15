@@ -10,8 +10,25 @@ const getUser = (user) => {
                 resolve(res);
                 //console.log(password);
             })
+    }).catch((error) => {
+        reject(error);
     });
 };
+
+getUsers = () => {
+    return new Promise((resolve, reject) => {
+        connection.query("SELECT * FROM user",
+            (err, res) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(res);
+            }
+        )
+    }).catch((error) => {
+        reject(error);
+    });
+}
 
 const addNewUser = (user) => {
     return new Promise((resolve, reject) => {
