@@ -45,6 +45,18 @@
             <header class="major">
                 <h2>Journey of CSE15</h2>
             </header>
+
+            <tr *ngFor="let event of events" class="btn-default">
+                <li>{{event.EventName}}</li>
+                <li>{{event.EventDate}} </li>
+                <li>{{event.EventDescription}}</li>
+                <li>{{event.photo1}}</li>
+                <li>{{event.photo2}}</li>
+                <li>{{event.photo3}}</li>
+                <li>{{event.photoAlbum1}}</li>
+                <li>{{event.photoAlbum2}}</li>
+                <li>{{event.photoAlbum3}}</li>
+            </tr>
         </div>
     </section>
 

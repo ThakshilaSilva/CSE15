@@ -28,7 +28,7 @@
         <nav id="nav">
             <ul>
                 <li><a href="/index">Home</a></li>
-                <li><a href="#">People</a></li>
+                <li><a href="/people">People</a></li>
                 <li><a href="/timeline">Timeline</a></li>
                 <li><a href="#">Results</a></li>
                 <li><a href="#">Notes</a></li>
@@ -43,8 +43,15 @@
         <div class="container">
 
             <header class="major">
-                <h2>Journey of CSE15</h2>
+                <h2>Family of CSE15</h2>
             </header>
+
+
+            <tr *ngFor="let student of students" class="btn-default">
+                <td>{{student.Username}}</td>
+            </tr>
+
+
         </div>
     </section>
 
@@ -62,10 +69,10 @@
                 <div class="4u$ 12u$(medium)">
                     <ul class="icons">
                         <li>
-                            <a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
+                            <a class="icon rounded fa-facebook" href="https://www.facebook.com/groups/1842954892657433/"><span class="label">Facebook</span></a>
                         </li>
                         <li>
-                            <a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
+                            <a class="icon rounded fa-youtube" href="https://www.youtube.com/channel/UCT77JieVc9KwyHdpa5Qn_8A"><span class="label">Twitter</span></a>
                         </li>
                         <li>
                             <a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>

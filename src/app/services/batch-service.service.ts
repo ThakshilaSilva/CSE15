@@ -16,7 +16,10 @@ export class BatchServiceService {
     return this.http.post("http://localhost:3000/add_event", JSON.stringify(data),
     new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
     .map(res => res.json()); 
+  }
 
+  getEvents(){
+    return this.http.get("http://localhost:3000/get_events").map(res => res.json());
   }
 
 }

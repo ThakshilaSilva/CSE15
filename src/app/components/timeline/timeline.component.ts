@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BatchServiceService } from '../../services/batch-service.service';
 
 @Component({
   selector: 'app-timeline',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
-  constructor() { }
+  events: any[];
+  batchService: BatchServiceService
+
+  constructor(private router: Router, private batch: BatchServiceService) {
+    this.batchService = batch;
+   }
 
   ngOnInit() {
+    this.getEvents();
+  }
+
+  getEvents(){
+    this.batch.getEvents().subscribe(
+      events => {
+        this.events = events;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
+

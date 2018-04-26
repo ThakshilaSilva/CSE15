@@ -52,4 +52,8 @@ export class UserService {
 
   }
 
+  getMembers(){
+    return this.http.get("http://localhost:3000/getMembers").map(res => res.json());
+  }
+ 
 }

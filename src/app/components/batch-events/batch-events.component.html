@@ -37,11 +37,45 @@
 						                </span>
                             <input type="text" name="description" id="description" placeholder="Event description" required />
                         </div>
+
+                        <div class="input_field">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-user"></i>
+                            </span>
+                            <input type="file" name="image1" id="image1" placeholder="Selected Photo 1" required/>
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-user"></i>
+                            </span>
+                            <input type="file" name="image2" id="image2" placeholder="Selected Photo 2" required/>
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-user"></i>
+                            </span>
+                            <input type="file" name="image3" id="image3" placeholder="Selected Photo 3" required/>
+                        </div>
+
                         <div class="input_field">
                             <span>
 							                <i aria-hidden="true" class="fa fa-envelope"></i>
 						                </span>
-                            <input type="url" name="album" id='album' placeholder="Photo album" required />
+                            <input type="url" name="album1" id='album1' placeholder="Photo album1" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="url" name="album2" id='album2' placeholder="Photo album2" />
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="url" name="album3" id='album3' placeholder="Photo album3" />
                         </div>
 
                         <button type="submit" class="signupbtn" (click)="addEvent()">Add the Event</button>

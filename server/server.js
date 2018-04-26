@@ -54,3 +54,20 @@ app.post("/updateUser", (req, res) => {
         res.status(400).send(err);
     });
 });
+
+
+app.get("/getMembers", (req, res) => { //  get all of the members
+    UserControllers.getStudents().then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.get("/get_events", (req, res) => {
+    BatchController.getEvents().then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});

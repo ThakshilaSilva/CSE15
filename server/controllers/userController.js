@@ -15,7 +15,7 @@ const getUser = (user) => {
     });
 };
 
-getUsers = () => {
+const getUsers = () => {
     return new Promise((resolve, reject) => {
         connection.query("SELECT * FROM user",
             (err, res) => {
@@ -29,6 +29,18 @@ getUsers = () => {
         reject(error);
     });
 }
+
+const getStudents = () => { // query every student from the database
+    return new Promise((resolve, reject) => {
+        connection.query("select * from user",
+            (err, res) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(res);
+            });
+    });
+};
 
 const addNewUser = (user) => {
     return new Promise((resolve, reject) => {
@@ -85,5 +97,6 @@ const updateUser = (user) => {
 module.exports = {
     getUser,
     addNewUser,
-    updateUser
+    updateUser,
+    getStudents
 };
