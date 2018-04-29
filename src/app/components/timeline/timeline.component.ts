@@ -24,6 +24,8 @@ export class TimelineComponent implements OnInit {
     this.batch.getEvents().subscribe(
       events => {
         this.events = events;
+        console.log(this.events[0].photo1.data);
+        
       },
       error => {
         console.log(error);
