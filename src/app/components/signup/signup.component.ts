@@ -25,6 +25,7 @@ export class SignupComponent implements OnInit {
     const username = document.forms['userForm']['username'].value;
     const fname = document.forms['userForm']['fname'].value;
     const lname= document.forms['userForm']['lname'].value;
+    const initials = document.forms['userForm']['initials'].value;
     const nic= document.forms['userForm']['nic'].value;
     const gender= document.forms['userForm']['gender'].value;
     const dob = document.forms['userForm']['dob'].value;
@@ -34,6 +35,7 @@ export class SignupComponent implements OnInit {
     const tp= document.forms['userForm']['tp'].value;
     const password = document.forms['userForm']['password'].value;
     const passwordC = document.forms['userForm']['passwordC'].value;
+    const college = document.forms['userForm']['college'].value;
     const linkedIn= document.forms['userForm']['linkedIn'].value;
     const fb= document.forms['userForm']['fb'].value;
 
@@ -43,6 +45,7 @@ export class SignupComponent implements OnInit {
         username: username,
         fname: fname,
         lname: lname,
+        initials: initials,
         nic: nic,
         gender: gender,
         dob: dob,
@@ -51,6 +54,7 @@ export class SignupComponent implements OnInit {
         address: address,
         tp: tp,
         password: password,
+        college: college,
         linkedIn: linkedIn,
         fb: fb
       }).subscribe(result => {

@@ -24,7 +24,7 @@
                             <span>
                               <i aria-hidden="true" class="fa fa-key"></i>
                             </span>
-                            <input type="text" name="username" id="username" placeholder="Index Number" required />
+                            <input type="text" name="username" id="username" placeholder="Index Number" required maxlength="7" pattern="^[0-9]{6}[A-Z]$" />
                         </div>
                         <div class="row clearfix">
                             <div class="col_half">
@@ -32,7 +32,7 @@
                                     <span>
 									    <i aria-hidden="true" class="fa fa-user"></i>
 								    </span>
-                                    <input type="text" name="fname" id="fname" placeholder="First Name" />
+                                    <input type="text" name="fname" id="fname" placeholder="First Name" required pattern="[a-zA-Z ]+" />
                                 </div>
                             </div>
                             <div class="col_half">
@@ -40,9 +40,15 @@
                                     <span>
 									                    <i aria-hidden="true" class="fa fa-user"></i>
 								                    </span>
-                                    <input type="text" name="lname" id="lname" placeholder="Last Name" required />
+                                    <input type="text" name="lname" id="lname" placeholder="Last Name" required pattern="[a-zA-Z ]+" />
                                 </div>
                             </div>
+                        </div>
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-user"></i>
+						                </span>
+                            <input type="text" name="initials" id="initials" placeholder="Name with initials" required pattern="[a-zA-Z ]+" />
                         </div>
                         <div class="row clearfix">
                             <div class="col_half">
@@ -50,7 +56,7 @@
                                     <span>
                                   <i aria-hidden="true" class="fa fa-address-card"></i>
                                 </span>
-                                    <input type="text" name="nic" id="nic" placeholder="NIC" required />
+                                    <input type="text" name="nic" id="nic" placeholder="NIC" required maxlength="9" pattern="^[0-9]{9}$" />
                                 </div>
                             </div>
 
@@ -107,7 +113,14 @@
                             <span>
 							                <i aria-hidden="true" class="fa fa-phone"></i>
 						                </span>
-                            <input type="text" name="tp" id='tp' placeholder="Contact Number" required />
+                            <input type="text" name="tp" id='tp' placeholder="Contact Number" required maxlength="10" pattern="^[0-9]{10}$" />
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-university"></i>
+						                </span>
+                            <input type="text" name="college" id="college" placeholder="College / School" required />
                         </div>
 
                         <div class="input_field">

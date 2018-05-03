@@ -1,14 +1,26 @@
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
-//var connection = require('./dbConnection');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var path = require('path');
+
 var UserControllers = require('./controllers/userController');
 var BatchController = require('./controllers/batchController');
 
 var app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+//app.use(cors());
+
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+    next();
+});
 
 app.listen(3000, (err) => {
     if (err) {
@@ -44,6 +56,7 @@ app.post("/add_event", (req, res) => {
         res.status(200).send(result);
     }).catch((err) => {
         res.status(400).send(err);
+        console.log(err);
     });
 });
 
@@ -71,3 +84,60 @@ app.get("/get_events", (req, res) => {
         res.status(400).send(err);
     });
 });
+
+const multer = require('multer');
+
+/*const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './uploads')
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + '.jpg')
+    }
+});
+
+const upload = multer({ storage: storage }).single('img');*/
+
+var store = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './server/uploads');
+    },
+    filename: function(req, file, cb) {
+        cb(null, Date.now() + '.' + file.originalname);
+    }
+});
+
+
+var upload = multer({ storage: store }).single('file');
+
+app.post('/upload', function(req, res, next) {
+    upload(req, res, function(err) {
+        if (err) {
+            return res.status(501).json({ error: err });
+        }
+        //do all database record saving activity
+        return res.json({ originalname: req.file.originalname, uploadname: req.file.filename });
+    });
+});
+
+/*app.post("/upload_avatar", function(req, res) {
+        console.log(req.body.img);
+        upload(req, res, function(err) {
+            console.log("came");
+            if (err) {
+                throw err;
+            }
+            res.json({
+                success: true,
+                message: 'Image was successfully uploaded.'
+            })
+        })
+    })*/
+/*var upload = multer({ dest: 'uploads/' })
+
+app.post('/upload_avatar', upload.single('img'), function(req, res, next) {
+    // req.file is the `avatar` file
+    // req.body will hold the text fields, if there were any
+    console.log(req.body);
+    res.status(204).end();
+})*/

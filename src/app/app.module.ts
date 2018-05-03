@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { FileUploadModule } from 'ng2-file-upload';
+import { Ng4FilesModule } from 'angular4-files-upload';
 
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
@@ -29,7 +31,7 @@ const appRoutes:Routes = [
     component: LoginFormComponent
   },
   {
-    path: 'dashboard',
+    path: 'upload',
     component: DashboardComponent
   },
   {
@@ -81,7 +83,8 @@ const appRoutes:Routes = [
     RouterModule.forRoot(appRoutes),
     HttpModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule
   ],
   providers: [UserService, BatchServiceService],
   bootstrap: [AppComponent]

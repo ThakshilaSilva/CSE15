@@ -3,13 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Responsive Registration Form</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
 
 </head>
 
 <body>
+    <header id="header">
+        <h1><a href="/index">CSE15</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/people">People</a></li>
+                <li><a href="/timeline">Timeline</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="/login">Sign In</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="form_wrapper">
         <div class="form_container">
@@ -37,27 +54,23 @@
 						                </span>
                             <input type="text" name="description" id="description" placeholder="Event description" required />
                         </div>
-
-                        <div class="input_field">
-                            <span>
-                                <i aria-hidden="true" class="fa fa-user"></i>
-                            </span>
-                            <input type="file" name="image1" id="image1" placeholder="Selected Photo 1" required/>
+                        <label>Upload 4 most important photoes of your event</label>
+                        <div id="fileSelector">
+                            <input type="file" name="fileUplaod" id="fileUpload" multiple ng2FileSelect [uploader]="uploader">
+                        </div>
+                        <div>
+                            <div class="row uploadList" *ngFor="let item of uploader.queue">
+                                <div class="col-sm-4">{{item.file.name}}</div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-dark" (click)="item.upload()">Upload</button>
+                                    <button type="button" class="btn btn-danger" (click)="item.remove()">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="uploader?.queue?.length > 0">
+                            <button type="button" class="btn btn-primary" (click)="uploader.uploadAll()">Upload All</button>
                         </div>
 
-                        <div class="input_field">
-                            <span>
-                                <i aria-hidden="true" class="fa fa-user"></i>
-                            </span>
-                            <input type="file" name="image2" id="image2" placeholder="Selected Photo 2" required/>
-                        </div>
-
-                        <div class="input_field">
-                            <span>
-                                <i aria-hidden="true" class="fa fa-user"></i>
-                            </span>
-                            <input type="file" name="image3" id="image3" placeholder="Selected Photo 3" required/>
-                        </div>
 
                         <div class="input_field">
                             <span>
