@@ -44,7 +44,7 @@ const getStudents = () => { // query every student from the database
 
 const addNewUser = (user) => {
     return new Promise((resolve, reject) => {
-        connection.query("INSERT INTO user VALUE(?,?,?,?,?,?,?,?,?,?,?,null,null,?,?,null,?,?)", [
+        connection.query("INSERT INTO user VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
             user.username,
             user.fname,
             user.lname,
@@ -56,6 +56,8 @@ const addNewUser = (user) => {
             user.address,
             user.email,
             user.stream,
+            user.userRole,
+            user.profilePic,
             user.fb,
             user.linkedIn,
             user.college,

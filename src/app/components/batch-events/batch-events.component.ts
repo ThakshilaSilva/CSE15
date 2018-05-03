@@ -49,7 +49,7 @@ export class BatchEventsComponent implements OnInit {
 
     if(today < day){
       alert('Please enter the correct date of the event');
-      document.forms['userForm']['date'].value =' ';
+      document.forms['userForm']['date'].value = ' ';
     }
     else{
       this.batch.addEvent({
@@ -75,5 +75,6 @@ export class BatchEventsComponent implements OnInit {
 
 
   }
+  
 
 }
