@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   userRole : string;
   profilePic: string;
 
-  constructor(private router:Router, private user:UserService) { 
+  constructor(private router:Router, private user:UserService) {
     this.userService = user;
   }
 
@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
     const college = document.forms['userForm']['college'].value;
     const linkedIn= document.forms['userForm']['linkedIn'].value;
     const fb= document.forms['userForm']['fb'].value;
-    
+
 
     //console.log(this.validate()+ " validate status")
 
@@ -47,7 +47,7 @@ export class SignupComponent implements OnInit {
 
     if(username == '150596C'){
       this.userRole = 'Admin';
-      //console.log("User Role is :"+this.userRole);
+      
     }else if (uname == '150589' || uname == '150566'){
       this.userRole = 'BatchRepresentative';
       //console.log("User Role is :"+this.userRole);
@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit {
     }else{
       this.profilePic = 'boy.png';
     }
-    
+
     if(this.validate()){
 
       if(password === passwordC){
@@ -86,7 +86,7 @@ export class SignupComponent implements OnInit {
           fb: fb,
           profilePic: this.profilePic,
           userRole : this.userRole
-          
+
         }).subscribe(result => {
           console.log("Result"+result);
           alert('Successfully signedup!');
@@ -106,7 +106,7 @@ export class SignupComponent implements OnInit {
 
     const username = document.forms['userForm']['username'].value;
     const fname = document.forms['userForm']['fname'].value;
-    const lname= document.forms['userForm']['lname'].value;     
+    const lname= document.forms['userForm']['lname'].value;
     const initials = document.forms['userForm']['initials'].value;
     const nic= document.forms['userForm']['nic'].value;
     const gender= document.forms['userForm']['gender'].value;
@@ -127,7 +127,7 @@ export class SignupComponent implements OnInit {
     console.log(username1);
     var regexNum=/^[0-9]+$/;
     var regexLtr=/^[a-zA-Z]+$/;
-   
+
     var valUsername = this.validateUsername(username, regexLtr, regexNum);
     var valFname = this.validateFname(fname, regexLtr);
     var valLname = this.validateLname(lname, regexLtr);
@@ -177,7 +177,7 @@ export class SignupComponent implements OnInit {
       return false;
     }
   }
-  
+
   validateLinkedIn(linkedIn){ //validate linkedIn
     if(this.ValidateURL(linkedIn)){
       return true;
@@ -225,13 +225,13 @@ export class SignupComponent implements OnInit {
       }else{
         alert('CSE mail address seems incorrect!');
         document.forms['userForm']['email'].value ='';
-        document.forms['userForm']['email'].focus(); 
+        document.forms['userForm']['email'].focus();
         return false;
       }
     }else{
       alert('CSE mail address seems incorrect!');
       document.forms['userForm']['email'].value ='';
-      document.forms['userForm']['email'].focus(); 
+      document.forms['userForm']['email'].focus();
       return false;
     }
   }
@@ -260,7 +260,7 @@ export class SignupComponent implements OnInit {
       return true;
     }else{
       alert('It seems first name is incorrect!');
-      document.forms['userForm']['fname'].focus(); 
+      document.forms['userForm']['fname'].focus();
       return false;
     }
   }
@@ -273,12 +273,12 @@ export class SignupComponent implements OnInit {
       return false;
     }
   }
-  
+
   validateNIC(nic, regexLtr, regexNum){
     if(this.validateLength(nic, 10)){ //validate the NIC
       const last = nic.substring(9,10);
       const first = nic.substring(0,9);
-    
+
       if((last.match('v') || last.match('V')) && first.match(regexNum)){
         return true;
       }else{
@@ -316,7 +316,7 @@ export class SignupComponent implements OnInit {
       const last = username.substring(6,7);
       const first = username.substring(0,3);
       const middle = username.substring(3,6);
-      
+
       if(last.match(regexLtr) && first.match('150') && middle.match(regexNum)){ //check the validity of subtrings of username
         return true;
       }else{
