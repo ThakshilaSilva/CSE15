@@ -52,7 +52,6 @@ export class BatchEventsComponent implements OnInit {
       document.forms['userForm']['date'].value =' ';
     }
     else{
-      
       this.batch.addEvent({
 
         eventName: eventName,
