@@ -23,7 +23,7 @@ export class BatchEventsComponent implements OnInit {
     this.batchService = batch;
     this.uploader.onCompleteItem = (item:any, response:any , status:any, headers:any) => {
       this.attachmentList.push(JSON.parse(response));
-      
+
   }
    }
 
@@ -31,7 +31,7 @@ export class BatchEventsComponent implements OnInit {
   }
 
   addEvent(){
-  
+
     const eventName = document.forms['userForm']['eventName'].value;
     const date = document.forms['userForm']['date'].value;
     const description =document.forms['userForm']['description'].value;
@@ -39,7 +39,7 @@ export class BatchEventsComponent implements OnInit {
     const photo2 = this.attachmentList[1].uploadname;
     const photo3 = this.attachmentList[2].uploadname;
     const photo4 = this.attachmentList[3].uploadname;
-    
+
     const album1 = document.forms['userForm']['album1'].value;
     const album02 = document.forms['userForm']['album2'].value;
     const album03 = document.forms['userForm']['album3'].value;
@@ -52,9 +52,9 @@ export class BatchEventsComponent implements OnInit {
       document.forms['userForm']['date'].value =' ';
     }
     else{
-      console.log("tfgyhjkl,;.");
+      
       this.batch.addEvent({
-    
+
         eventName: eventName,
         date: date,
         description: description,
@@ -73,7 +73,7 @@ export class BatchEventsComponent implements OnInit {
       }
       );
     }
-    
+
 
   }
 
