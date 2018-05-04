@@ -38,21 +38,24 @@ export class UserService {
       .map(res => res.json());
   }
 
-  addUser(data){
+  addUser(data){ // add new users
     return this.http.post("http://localhost:3000/add_new_user", JSON.stringify(data),
     new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
-    .map(res => res.json()); 
+    .map(res => {
+      console.log(res);
+      return res.json();
+    }); 
 
   }
-
-  updateUser(data){
+ 
+  updateUser(data){ //edit user
     return this.http.post("http://localhost:3000/updateUser", JSON.stringify(data),
     new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
     .map(res => res.json()); 
 
   }
 
-  getMembers(){
+  getMembers(){ //get members
     return this.http.get("http://localhost:3000/getMembers").map(res => res.json());
   }
  

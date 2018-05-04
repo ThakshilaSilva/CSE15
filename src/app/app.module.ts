@@ -20,6 +20,7 @@ import { AcheivementsComponent } from './components/acheivements/acheivements.co
 import { IndexComponent } from './components/index/index.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { PeopleComponent } from './components/people/people.component';
+import { EditEventsComponent } from './components/edit-events/edit-events.component';
 
 const appRoutes:Routes = [
   {
@@ -61,6 +62,10 @@ const appRoutes:Routes = [
   {
     path: 'people',
     component: PeopleComponent
+  },
+  {
+    path: 'editEvents',
+    component: EditEventsComponent
   }
   
 ]
@@ -77,7 +82,8 @@ const appRoutes:Routes = [
     AcheivementsComponent,
     IndexComponent,
     TimelineComponent,
-    PeopleComponent
+    PeopleComponent,
+    EditEventsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

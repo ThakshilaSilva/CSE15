@@ -47,7 +47,7 @@ export class SignupComponent implements OnInit {
 
     if(username == '150596C'){
       this.userRole = 'Admin';
-      
+
     }else if (uname == '150589' || uname == '150566'){
       this.userRole = 'BatchRepresentative';
       //console.log("User Role is :"+this.userRole);
@@ -87,10 +87,10 @@ export class SignupComponent implements OnInit {
           profilePic: this.profilePic,
           userRole : this.userRole
 
-        }).subscribe(result => {
-          console.log("Result"+result);
+        }).subscribe((result) => {
+          // console.log("Result"+result);
           alert('Successfully signedup!');
-        }, error => {
+        }, (error) => {
           console.log(error);
         }
         );
