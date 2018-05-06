@@ -15,6 +15,43 @@ const getUser = (user) => {
     });
 };
 
+const getAchievements = (achievement) => {
+    return new Promise((resolve, reject) => {
+        connection.query("SELECT * FROM userachievement WHERE UserID = ?", [achievement.username],
+            (err, res) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(res);
+            })
+    }).catch((error) => {
+        reject(error);
+    });
+};
+
+const addAchievement = (user) => {
+    return new Promise((resolve, reject) => {
+        connection.query("INSERT INTO userachievement VALUE(?,?,?,?,?,?,?)", [
+            user.username,
+            user.field,
+            user.type,
+            user.achievementName,
+            user.description,
+            user.date,
+            null
+        ], (err, res) => {
+            console.log("response", res);
+            if (err) {
+                return reject(err);
+            }
+            resolve(res);
+        });
+    }).catch((error) => {
+        reject(error);
+
+    });
+};
+
 const getUsers = () => {
     return new Promise((resolve, reject) => {
         connection.query("SELECT * FROM user",
@@ -62,9 +99,11 @@ const addNewUser = (user) => {
             user.linkedIn,
             user.college,
             user.password
+
         ], (err, res) => {
+            console.log("response", res);
             if (err) {
-                reject(err);
+                return reject(err);
             }
             resolve(res);
         });
@@ -102,5 +141,7 @@ module.exports = {
     getUser,
     addNewUser,
     updateUser,
-    getStudents
+    getStudents,
+    getAchievements,
+    addAchievement
 };

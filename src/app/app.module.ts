@@ -48,7 +48,7 @@ const appRoutes:Routes = [
     component: ProfileComponent
   },
   {
-    path: 'addAchievement',
+    path: 'achievement',
     component: AcheivementsComponent
   },
   {

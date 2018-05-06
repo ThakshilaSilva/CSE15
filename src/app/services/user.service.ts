@@ -58,5 +58,17 @@ export class UserService {
   getMembers(){ //get members
     return this.http.get("http://localhost:3000/getMembers").map(res => res.json());
   }
+
+  queryAchievements(data){
+    return this.http.post('http://localhost:3000/getAchievements', JSON.stringify(data),
+      new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+      .map(res => res.json());
+  }
+
+  addAchievement(data){
+    return this.http.post('http://localhost:3000/addAchievement', JSON.stringify(data),
+      new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+      .map(res => res.json());
+  }
  
 }

@@ -10,6 +10,7 @@ var BatchController = require('./controllers/batchController');
 
 var app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //app.use(cors());
 
@@ -45,7 +46,7 @@ app.post("/get_user", (req, res) => {
 
 app.post("/add_new_user", (req, res) => {
     UserControllers.addNewUser(req.body).then((result) => {
-        res.status(200).send(result[0]);
+        res.status(200).send(result);
     }).catch((err) => {
         res.status(400).send(err);
     });
@@ -62,7 +63,7 @@ app.post("/add_event", (req, res) => {
 
 app.post("/updateUser", (req, res) => {
     UserControllers.updateUser(req.body).then((result) => {
-        res.status(200).send(result[0]);
+        res.status(200).send(result);
     }).catch((err) => {
         res.status(400).send(err);
     });
@@ -79,6 +80,22 @@ app.get("/getMembers", (req, res) => { //  get all of the members
 
 app.get("/get_events", (req, res) => {
     BatchController.getEvents().then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.post("/getAchievements", (req, res) => {
+    UserControllers.getAchievements(req.body).then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.post("/addAchievement", (req, res) => {
+    UserControllers.addAchievement(req.body).then((result) => {
         res.status(200).send(result);
     }).catch((err) => {
         res.status(400).send(err);
