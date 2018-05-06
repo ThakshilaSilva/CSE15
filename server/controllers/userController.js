@@ -139,6 +139,8 @@ const updateUser = (user) => {
     });
 }
 
+
+
 module.exports = {
     getUser,
     addNewUser,

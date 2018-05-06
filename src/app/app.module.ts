@@ -24,6 +24,8 @@ import { EditEventsComponent } from './components/edit-events/edit-events.compon
 import { AcademicEventsComponent } from './components/academic-events/academic-events.component';
 import { EditAcaEventsComponent } from './components/edit-aca-events/edit-aca-events.component';
 import { EditBatchEventsComponent } from './components/edit-batch-events/edit-batch-events.component';
+import { EditAchievementsComponent } from './components/edit-achievements/edit-achievements.component';
+
 
 const appRoutes:Routes = [
   {
@@ -81,7 +83,8 @@ const appRoutes:Routes = [
   {
     path: 'editBatchEvents',
     component: EditBatchEventsComponent
-  }
+  },
+  
   
 ]
 
@@ -101,7 +104,9 @@ const appRoutes:Routes = [
     EditEventsComponent,
     AcademicEventsComponent,
     EditAcaEventsComponent,
-    EditBatchEventsComponent
+    EditBatchEventsComponent,
+    EditAchievementsComponent
+    
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

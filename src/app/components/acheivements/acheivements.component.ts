@@ -11,6 +11,7 @@ export class AcheivementsComponent implements OnInit {
 
   acheivements: any[];
   userService: UserService;
+  
 
   constructor(private router: Router, private user: UserService) {
     this.userService = user;
@@ -37,8 +38,6 @@ export class AcheivementsComponent implements OnInit {
     )
 
   }
-
-  
 
   addAcheivement(){
 

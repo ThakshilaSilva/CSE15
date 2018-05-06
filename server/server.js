@@ -127,6 +127,7 @@ app.post("/getSelectedAcaEvent", (req, res) => {
     });
 });
 
+
 app.post("/getSelectedBatchEvent", (req, res) => {
     BatchController.getEditableBatchEvent(req.body).then((result) => {
         res.status(200).send(result);
@@ -151,6 +152,7 @@ app.post("/updateBatchEvent", (req, res) => {
         res.status(400).send(err);
     });
 });
+
 
 const multer = require('multer');
 

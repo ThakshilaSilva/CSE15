@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+    <h2>Edit Batch Events</h2>
+
+    <ul *ngFor="let event of events" class="btn-default">
+        {{event.EventName}}
+        <li>{{event.EventDescription}}</li>
+        <button (click)="editThis(event.EventID, event.EventName)">Edit Event</button>
+    </ul>
+    <div *ngIf="edit">
+        <div class="form_wrapper">
+            <div class="form_container">
+                <div class="title_container">
+                    <h2>Edit the event details of {{EventName}}</h2>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="">
+                        <form id='userForm'>
+                            <div class="input_field">
+                                <label for="code">Event Name</label>
+                                <input type="text" name="name" id="name" value={{items.EventName}} />
+                            </div>
+                            <div class="row clearfix">
+
+                                <div class="input_field">
+                                    <label for="name">Event Description</label>
+                                    <input type="text" name="description" id="description" value={{items.EventDescription}}/>
+                                </div>
+
+
+                                <div class="input_field">
+                                    <label for="detail">Photo album1 </label>
+                                    <input type="url" name="album1" id="album1" value={{items.photoAlbum1}}/>
+                                </div>
+                                <div class="input_field">
+                                    <label for="detail">Photo album2 </label>
+                                    <input type="url" name="album2" id="album2" value={{items.photoAlbum2}}/>
+                                </div>
+                                <div class="input_field">
+                                    <label for="detail">Photo album3 </label>
+                                    <input type="url" name="album3" id="album3" value={{items.photoAlbum3}}/>
+                                </div>
+
+                                <div class="input_field">
+                                    <label for="date">Due Date</label>
+                                    <input type="text" name="date" id="date" value={{items.EventDate}} disabled/>
+                                </div>
+
+                                <button class="btn btn-success" style="margin: 10px;" (click)="update()"> Update </button>
+                                <button class="btn btn-success" style="margin: 10px;" (click)="cancel()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

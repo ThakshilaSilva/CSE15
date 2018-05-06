@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+    <h2>Edit Academic Events</h2>
+
+    <ul *ngFor="let event of events" class="btn-default">
+        {{event.ModuleCode}} - {{event.ModuleName}}
+        <li>{{event.EventDetail}}</li>
+        <button (click)="editThis(event.EventID, event.ModuleName)">Edit Event</button>
+    </ul>
+    <div *ngIf="edit">
+        <div class="form_wrapper">
+            <div class="form_container">
+                <div class="title_container">
+                    <h2>Edit the submission details of {{moduleName}}</h2>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="">
+                        <form id='userForm'>
+                            <div class="input_field">
+                                <label for="code">Module Code</label>
+                                <input type="text" name="code" id="code" value={{items.ModuleCode}} />
+                            </div>
+                            <div class="row clearfix">
+
+                                <div class="input_field">
+                                    <label for="name">Module Name</label>
+                                    <input type="text" name="name" id="name" value={{items.ModuleName}}/>
+                                </div>
+
+
+                                <div class="input_field">
+                                    <label for="detail">Event Details</label>
+                                    <input type="text" name="detail" id="detail" value={{items.EventDetail}}/>
+                                </div>
+
+
+                                <div class="input_field">
+                                    <label for="date">Due Date</label>
+                                    <input type="text" name="date" id="date" value={{items.DueDate}} disabled/>
+                                </div>
+
+                                <div class="input_field">
+                                    <label for="date">New Submission Date and Time</label>
+                                    <input type="datetime-local" name="date" id="date" />
+                                </div>
+
+
+                                <button class="btn btn-success" style="margin: 10px;" (click)="update()"> Update </button>
+                                <button class="btn btn-success" style="margin: 10px;" (click)="cancel()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

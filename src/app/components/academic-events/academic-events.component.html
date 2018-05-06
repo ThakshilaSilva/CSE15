@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+    <header class="major">
+        <h2>Upcoming Academic events</h2>
+    </header>
+
+    <h2>Add new upcoming academic events here</h2>
+    <div class="form_wrapper">
+
+        <div class="form_container">
+
+            <div class="title_container">
+                <h3>Enter Here</h3>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form id='userForm'>
+                        <div class="input_field">
+                            <span>
+                              <i aria-hidden="true" class="fa fa-lock"></i>
+                            </span>
+                            <input type="text" name="code" id="code" placeholder="Module Code" required />
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-user"></i>
+						                </span>
+                            <input type="text" name="name" id="name" placeholder="Module Name" required />
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-user"></i>
+						                </span>
+                            <input type="text" name="description" id="description" placeholder="Event details" required />
+                        </div>
+
+                        <div class="input_field">
+                            <span>
+							                <i aria-hidden="true" class="fa fa-envelope"></i>
+						                </span>
+                            <input type="date" name="date" id="date" placeholder="Due date" required />
+                        </div>
+
+                        <button type="submit" class="signupbtn" (click)="addEvent()">Add the Event</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
