@@ -25,6 +25,43 @@ export class BatchServiceService {
     return this.http.get("http://localhost:3000/get_events").map(res => res.json());
   }
 
+  addAcaEvent(data){
+    return this.http.post("http://localhost:3000/addAcaEvent", JSON.stringify(data),
+    new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+    .map(res => res.json());
+  }
+
+  getAcaEvents(){ //get members
+    return this.http.get("http://localhost:3000/getAcaEvents").map(res => res.json());
+  }
+
+
+  getSelectedAcaEvent(data){
+    return this.http.post("http://localhost:3000/getSelectedAcaEvent", JSON.stringify(data),
+    new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+    .map(res => res.json()); 
+  }
+
+
+  getSelectedBatchEvent(data){
+    return this.http.post("http://localhost:3000/getSelectedBatchEvent", JSON.stringify(data),
+    new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+    .map(res => res.json()); 
+  }
+
+
+  updateAcaEvent(data) { 
+    return this.http.post("http://localhost:3000/updateAcaEvent", JSON.stringify(data),
+    new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+    .map(res => res.json()); 
+  }
+
+  updateBatchEvent(data) { 
+    return this.http.post("http://localhost:3000/updateBatchEvent", JSON.stringify(data),
+    new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})}))
+    .map(res => res.json()); 
+  }
+
 
   uploadAvatar(event){
     let fileList: FileList = event.target.files;

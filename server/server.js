@@ -102,6 +102,56 @@ app.post("/addAchievement", (req, res) => {
     });
 });
 
+app.post("/addAcaEvent", (req, res) => {
+    BatchController.addAcaEvent(req.body).then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.get("/getAcaEvents", (req, res) => { //  get all of the members
+    BatchController.getAcaEvents().then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.post("/getSelectedAcaEvent", (req, res) => {
+    BatchController.getEditableAcaEvent(req.body).then((result) => {
+        res.status(200).send(result);
+        //console.log("successful");
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.post("/getSelectedBatchEvent", (req, res) => {
+    BatchController.getEditableBatchEvent(req.body).then((result) => {
+        res.status(200).send(result);
+        //console.log("successful");
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.post("/updateAcaEvent", (req, res) => {
+    BatchController.updateAcaEvent(req.body).then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
+app.post("/updateBatchEvent", (req, res) => {
+    BatchController.updateBatchEvent(req.body).then((result) => {
+        res.status(200).send(result);
+    }).catch((err) => {
+        res.status(400).send(err);
+    });
+});
+
 const multer = require('multer');
 
 /*const storage = multer.diskStorage({

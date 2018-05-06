@@ -21,6 +21,9 @@ import { IndexComponent } from './components/index/index.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { PeopleComponent } from './components/people/people.component';
 import { EditEventsComponent } from './components/edit-events/edit-events.component';
+import { AcademicEventsComponent } from './components/academic-events/academic-events.component';
+import { EditAcaEventsComponent } from './components/edit-aca-events/edit-aca-events.component';
+import { EditBatchEventsComponent } from './components/edit-batch-events/edit-batch-events.component';
 
 const appRoutes:Routes = [
   {
@@ -66,6 +69,18 @@ const appRoutes:Routes = [
   {
     path: 'editEvents',
     component: EditEventsComponent
+  },
+  {
+    path: 'addAcdemicEvents',
+    component: AcademicEventsComponent
+  },
+  {
+    path: 'editAcaEvents',
+    component: EditAcaEventsComponent
+  },
+  {
+    path: 'editBatchEvents',
+    component: EditBatchEventsComponent
   }
   
 ]
@@ -83,7 +98,10 @@ const appRoutes:Routes = [
     IndexComponent,
     TimelineComponent,
     PeopleComponent,
-    EditEventsComponent
+    EditEventsComponent,
+    AcademicEventsComponent,
+    EditAcaEventsComponent,
+    EditBatchEventsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
